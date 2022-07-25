@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import { getItemLocalStorage, setItemLocalStorage } from '../helpers/localStorage';
-import { validateEmailAndPassword } from '../helpers/validate/validateEmailAndPassword';
-import { fetchPost } from '../helpers/api/requests';
+import { useHistory, Link } from 'react-router-dom';
+import { getItemLocalStorage, setItemLocalStorage } from '../../helpers/localStorage';
+import {
+  validateEmailAndPassword } from '../../helpers/validate/validateEmailAndPassword';
+import { fetchPost } from '../../helpers/api/requests';
+import './style.css';
 
 function LoginPage() {
   const [login, setLogin] = useState({
@@ -69,57 +71,49 @@ function LoginPage() {
     }
   };
 
-  const redirectToRegister = () => {
-    history.push('/register');
-  };
-
   return (
-    <div>
-      <div>
+    <div className="login">
+      <form className="login-form">
+        <label htmlFor="login">
+          Login
+          <input
+            id="login"
+            type="text"
+            name="email"
+            placeholder="teste@teste.com"
+            value={ login.email }
+            data-testid="common_login__input-email"
+            onChange={ handleChange }
+          />
+        </label>
+        <label htmlFor="password">
+          Senha
+          <input
+            id="password"
+            type="password"
+            placeholder="******"
+            data-testid="common_login__input-password"
+            name="password"
+            value={ login.password }
+            onChange={ handleChange }
+          />
+        </label>
+        <button
+          type="button"
+          data-testid="common_login__button-login"
+          disabled={ buttonDisabled }
+          onClick={ postLogin }
+        >
+          login
+        </button>
         <div>
-          <label htmlFor="login">
-            Login
-            <input
-              id="login"
-              type="text"
-              name="email"
-              value={ login.email }
-              data-testid="common_login__input-email"
-              onChange={ handleChange }
-            />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="password">
-            Senha
-            <input
-              id="password"
-              type="password"
-              data-testid="common_login__input-password"
-              name="password"
-              value={ login.password }
-              onChange={ handleChange }
-            />
-          </label>
-        </div>
-        <div>
-          <button
+          <Link
+            to="/register"
             type="button"
-            data-testid="common_login__button-login"
-            disabled={ buttonDisabled }
-            onClick={ postLogin }
+            data-testid="common_login__button-register"
           >
-            login
-          </button>
-          <div>
-            <button
-              type="button"
-              data-testid="common_login__button-register"
-              onClick={ redirectToRegister }
-            >
-              Ainda não tenho conta
-            </button>
-          </div>
+            Ainda não tenho conta
+          </Link>
         </div>
         <span
           data-testid="common_login__element-invalid-email"
@@ -127,7 +121,7 @@ function LoginPage() {
         >
           {messageError}
         </span>
-      </div>
+      </form>
     </div>
   );
 }
