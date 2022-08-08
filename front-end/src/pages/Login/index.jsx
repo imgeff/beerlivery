@@ -4,6 +4,7 @@ import { getItemLocalStorage, setItemLocalStorage } from '../../helpers/localSto
 import {
   validateEmailAndPassword } from '../../helpers/validate/validateEmailAndPassword';
 import { fetchPost } from '../../helpers/api/requests';
+import deliveryBackground from '../../images/TakeAway-pana.svg';
 import './style.css';
 
 function LoginPage() {
@@ -36,7 +37,6 @@ function LoginPage() {
   // componentDidMount
   useEffect(() => {
     isUserLogged();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // componentDidUpdate
@@ -73,55 +73,63 @@ function LoginPage() {
 
   return (
     <div className="login">
-      <form className="login-form">
-        <label htmlFor="login">
-          Login
-          <input
-            id="login"
-            type="text"
-            name="email"
-            placeholder="teste@teste.com"
-            value={ login.email }
-            data-testid="common_login__input-email"
-            onChange={ handleChange }
-          />
-        </label>
-        <label htmlFor="password">
-          Senha
-          <input
-            id="password"
-            type="password"
-            placeholder="******"
-            data-testid="common_login__input-password"
-            name="password"
-            value={ login.password }
-            onChange={ handleChange }
-          />
-        </label>
-        <button
-          type="button"
-          data-testid="common_login__button-login"
-          disabled={ buttonDisabled }
-          onClick={ postLogin }
-        >
-          login
-        </button>
-        <div>
-          <Link
-            to="/register"
+      <div className="login-form">
+        <form>
+          <label htmlFor="email">
+            Email
+            <input
+              id="email"
+              type="text"
+              name="email"
+              placeholder=" email@email.com"
+              value={ login.email }
+              data-testid="common_login__input-email"
+              onChange={ handleChange }
+            />
+          </label>
+          <label htmlFor="password">
+            Senha
+            <input
+              id="password"
+              type="password"
+              placeholder=" * * * * * *"
+              data-testid="common_login__input-password"
+              name="password"
+              value={ login.password }
+              onChange={ handleChange }
+            />
+          </label>
+          <button
             type="button"
-            data-testid="common_login__button-register"
+            data-testid="common_login__button-login"
+            disabled={ buttonDisabled }
+            onClick={ postLogin }
           >
-            Ainda não tenho conta
-          </Link>
-        </div>
-        <span
-          data-testid="common_login__element-invalid-email"
-          style={ messageError.length > 0 ? { opacity: 1 } : { opacity: 0 } }
-        >
-          {messageError}
-        </span>
-      </form>
+            login
+          </button>
+          <div>
+            <Link
+              to="/register"
+              type="button"
+              data-testid="common_login__button-register"
+            >
+              Ainda não tenho conta
+            </Link>
+          </div>
+          <span
+            data-testid="common_login__element-invalid-email"
+            style={ messageError.length > 0 ? { opacity: 1 } : { opacity: 0 } }
+          >
+            {messageError}
+          </span>
+        </form>
+      </div>
+      <div className="login-background">
+        <h1>Delivery App</h1>
+        <figure>
+          <img src={ deliveryBackground } alt="" />
+        </figure>
+      </div>
     </div>
   );
 }
