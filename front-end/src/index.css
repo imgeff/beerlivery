@@ -1,16 +1,14 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@tailwindbase;
+@tailwindcomponents;
+@tailwindutilities;
 
-body {
-  /* @apply
-    bg-primary
-  ; */
-  background-image: url('./images/edgar-chaparro-Lwx-q6OdGAc-unsplash.jpg');
-  background-size: 100vw 100vh;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+
+  @apply bg-primary ;
+  font-family: Ubuntu , -apple-system , BlinkMacSystemFont , Roboto , Oxygen , sans-serif;
 }
