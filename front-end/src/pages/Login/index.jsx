@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-max-depth */
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { getItemLocalStorage, setItemLocalStorage } from '../../helpers/localStorage';
@@ -98,14 +99,18 @@ function LoginPage() {
           <p>Seja Bem Vindo! Faça seu login na plataforma</p>
         </div>
         <div className="select-form">
-          <button type="button" onClick={ () => setIsRegister(false) }>
-            <img src={ loginIcon } alt="ícone de login" />
-            <span>Entrar</span>
-          </button>
-          <button type="button" onClick={ () => setIsRegister(true) }>
-            <img src={ registerIcon } alt="ícone de registro" />
-            <span>Registrar</span>
-          </button>
+          <div className="select-button">
+            <button type="button" onClick={ () => setIsRegister(false) }>
+              <img src={ loginIcon } alt="ícone de login" />
+              <span>Entrar</span>
+            </button>
+          </div>
+          <div className="select-button">
+            <button type="button" onClick={ () => setIsRegister(true) }>
+              <img src={ registerIcon } alt="ícone de registro" />
+              <span>Registrar</span>
+            </button>
+          </div>
         </div>
         <form>
           { isRegister && (
