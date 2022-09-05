@@ -1,37 +1,123 @@
-/* stylelint-disable font-family-no-missing-generic-family-keyword */
-
 /* stylelint-disable property-no-vendor-prefix */
 .login {
+  background: radial-gradient(circle at 10% 60%, rgb(45, 51, 84), black);
 
   @apply flex
     items-center
     justify-between
-    h-[100vh] ;
+    h-[100vh]
+    w-full
+    overflow-hidden ;
 }
 
-.login-form {
-  background-blend-mode: exclusion;
-  background-image: url('../../images/nicolas-pereyra-p-jqrltlE0E-unsplash.jpg');
-  background-size: cover;
-  border: 2px solid;
+.login-branding {
+  background-color: burlywood;
+  background-image: url('../../images/ilustrations/delivery.svg');
+  background-position-x: -40px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  background-size: 800px;
 
-  @apply w-[60vw]
-    h-[100vh]
-    bg-primary
-    flex flex-col
+  @apply flex
+    relative
+    h-full
+    w-[35vw]
+    flex-col
     items-center
     justify-center
-    border-0
-    border-r-4
-    border-r-tertiary ;
+    gap-8
+    pl-16
+    overflow-hidden ;
 }
 
-.login-form form {
+.login-branding img {
+  animation: fly 110s infinite linear;
+
+  @apply w-[55rem]
+    absolute
+    aspect-square
+    z-10 ;
+}
+
+.login-title {
+
+  @apply flex
+    flex-col
+    justify-center
+    items-center ;
+}
+
+.login-title img {
+
+  @apply aspect-square
+    h-16 ;
+}
+
+.container-form {
+
+  @apply w-[65vw]
+    relative
+    flex
+    flex-wrap
+    items-center
+    justify-center ;
+}
+
+.select-form {
+
+  @apply flex
+    absolute
+    right-0
+    w-36
+    h-full
+    gap-2
+    justify-center
+    items-center
+    flex-col
+    rounded-tl-xl
+    rounded-bl-xl ;
+}
+
+.select-form button {
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid burlywood;
+
+  @apply w-16
+    flex
+    items-center
+    justify-start
+    gap-5
+    text-white
+    font-semibold
+    rounded-full
+    px-5
+    py-4
+    cursor-pointer
+    transition-all
+    hover:w-36
+    hover:rounded-r-none
+    hover:border-r-0 ;
+}
+
+.select-form button span {
+
+  @apply hidden
+    text-base ;
+}
+
+.select-form button:hover span {
+
+  @apply inline ;
+}
+
+.login form {
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
   background: rgba(0, 0, 0, 0.6);
 
-  @apply w-[26vw]
+  @apply w-[24vw]
     p-10
     border-2
     border-quintenary
@@ -43,7 +129,7 @@
     rounded-xl ;
 }
 
-.login-form form label {
+.login form label {
 
   @apply w-11/12
     flex flex-wrap
@@ -52,9 +138,11 @@
 }
 
 
-.login-form form label input {
+.login form label input {
   background: none;
+  letter-spacing: 1px;
   outline: none;
+  text-shadow: 1px 1px 2px black;
 
   @apply my-3
     mx-auto
@@ -64,13 +152,13 @@
     border-0
     border-b-2
     border-quaternary
-    text-quaternary
+    text-white
     font-semibold
-    placeholder:text-quaternary
+    placeholder:text-zinc-600
     placeholder:font-semibold ;
 }
 
-.login-form form button {
+.login form .btn-primary {
 
   @apply bg-quaternary
     opacity-80
@@ -85,40 +173,74 @@
     font-bold
     transition-all
     cursor-pointer
+    border-2
+    border-quaternary
     hover:opacity-100 ;
 }
 
-.login-form form a {
+.login .btn-secondary {
+  background: none;
+  border: none;
 
   @apply text-gray-400
+    text-sm
+    font-semibold
+    cursor-pointer
     no-underline
     hover:text-white
     hover:underline
     transition-colors ;
 }
 
-.login-background {
+.presentation {
 
-  @apply w-[40vw]
-    h-full
+  @apply w-full
     flex
     flex-col
+    items-center
     justify-center
-    items-center ;
+    gap-4
+    mb-10 ;
 }
 
-.login-background h1 {
-  font-family: Bree serif;
-  text-shadow: 1px 1px 8px #a29264;
+.presentation p {
 
-  @apply text-7xl
-    -mb-20
-    font-normal
-    text-tertiary ;
+  @apply text-4xl
+    max-w-lg
+    text-center
+    font-bold
+    text-zinc-400 ;
 }
 
-.login-background figure img {
+.presentation img {
+
+  @apply w-8 ;
+}
+
+.presentation h1 {
+
+  @apply text-4xl
+    flex
+    items-center
+    text-center
+    gap-1
+    font-bold
+    text-quaternary ;
+}
+
+.login-branding figure img {
 
   @apply aspect-square
-    h-[45rem] ;
+    h-[28rem] ;
+}
+
+@keyframes fly {
+
+  from {
+    right: -50rem;
+  }
+
+  to {
+    right: 100%;
+  }
 }

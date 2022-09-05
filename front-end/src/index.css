@@ -8,7 +8,5 @@
 }
 
 body {
-
-  @apply bg-primary ;
   font-family: Ubuntu , -apple-system , BlinkMacSystemFont , Roboto , Oxygen , sans-serif;
 }
