@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import { fetchPost } from '../helpers/api/requests';
-import { validateRegister } from '../helpers/validate/validateEmailAndPassword';
+import validateDataUser from '../helpers/validate/validateDataUser';
 import { getItemLocalStorage } from '../helpers/localStorage';
 
 function AdminManagePage() {
@@ -23,7 +23,7 @@ function AdminManagePage() {
   };
 
   const validateEmail = ({ email, password, name }) => {
-    setButtonDisabled(validateRegister(name, email, password));
+    setButtonDisabled(validateDataUser({ name, email, password }, true));
   };
 
   useEffect(() => {
