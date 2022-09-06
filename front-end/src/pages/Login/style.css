@@ -1,30 +1,156 @@
 /* stylelint-disable property-no-vendor-prefix */
 .login {
+  background: radial-gradient(circle at 10% 60%, rgb(45, 51, 84), black);
 
   @apply flex
+    items-center
+    justify-between
+    h-[100vh]
+    w-full
+    overflow-hidden
+    md:flex-col ;
+}
+
+.login-branding {
+  background-color: burlywood;
+  background-image: url('../../images/ilustrations/delivery.svg');
+  background-position-x: 50%;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  background-size: 145%;
+
+  @apply flex
+    relative
+    h-full
+    w-[35vw]
     flex-col
     items-center
     justify-center
-    h-[100vh] ;
+    gap-8
+    pl-16
+    overflow-hidden
+    md:hidden ;
 }
 
-.login-form {
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  background: rgba(0, 0, 0, 0.55);
+.login-branding img {
+  animation: fly 110s infinite linear;
 
-  @apply w-[30vw]
+  @apply w-[55rem]
+    absolute
+    aspect-square
+    z-10 ;
+}
+
+.login-title {
+
+  @apply flex
+    flex-col
+    justify-center
+    items-center ;
+}
+
+.login-title img {
+
+  @apply aspect-square
+    h-16 ;
+}
+
+.container-form {
+
+  @apply w-[65vw]
+    relative
+    flex
+    flex-wrap
+    items-center
+    justify-center
+    xl:h-full
+    xl:flex-col
+    xl:gap-10
+    md:w-full ;
+}
+
+.select-form {
+
+  @apply flex
+    absolute
+    right-0
+    w-36
+    h-full
+    gap-2
+    justify-center
+    items-center
+    flex-col
+    rounded-tl-xl
+    rounded-bl-xl
+    xl:static
+    xl:h-auto
+    xl:flex-row
+    xl:justify-around
+    xl:w-full ;
+}
+
+.select-button {
+
+  @apply w-36 flex justify-center ;
+}
+
+.select-button button {
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid burlywood;
+
+  @apply w-16
+    flex
+    items-center
+    justify-start
+    gap-5
+    text-white
+    font-semibold
+    rounded-full
+    px-5
+    py-4
+    cursor-pointer
+    transition-all
+    hover:w-full
+    hover:rounded-r-none
+    hover:border-r-0
+    xl:hover:rounded-full
+    xl:hover:border-2
+    xl:gap-3 ;
+}
+
+.select-form button span {
+
+  @apply hidden
+    text-base ;
+}
+
+.select-form button:hover span {
+
+  @apply inline ;
+}
+
+.login form {
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.6);
+
+  @apply w-[24vw]
     p-10
     border-2
-    border-black
+    border-quintenary
     text-white
+    font-bold
     flex flex-col
     items-center
     justify-center
-    rounded-xl ;
+    rounded-xl
+    2xl:w-[50%]
+    xl:w-[70%] ;
 }
 
-.login-form label {
+.login form label {
 
   @apply w-11/12
     flex flex-wrap
@@ -33,37 +159,112 @@
 }
 
 
-.login-form label input {
+.login form label input {
   background: none;
+  letter-spacing: 1px;
+  outline: none;
+  text-shadow: 1px 1px 2px black;
 
   @apply my-3
     mx-auto
     py-3
     w-full
     px-10
+    border-0
     border-b-2
-    border-gray-400 ;
+    border-quaternary
+    text-white
+    font-semibold
+    placeholder:text-zinc-600
+    placeholder:font-semibold ;
 }
 
-.login-form button {
+.login form .btn-primary {
 
-  @apply bg-tertiary
+  @apply bg-quaternary
     opacity-80
-    hover:opacity-100
+    uppercase
+    tracking-wider
     mt-10
     mb-5
     w-4/5
     py-3
     rounded-md
-    text-white
+    text-black
     font-bold
     transition-all
-    cursor-pointer ;
+    cursor-pointer
+    border-2
+    border-quaternary
+    hover:opacity-100 ;
 }
 
-.login-form a {
+.login .btn-secondary {
+  background: none;
+  border: none;
 
   @apply text-gray-400
+    text-sm
+    font-semibold
+    cursor-pointer
+    no-underline
     hover:text-white
+    hover:underline
     transition-colors ;
+}
+
+.presentation {
+
+  @apply w-full
+    flex
+    flex-col
+    items-center
+    justify-center
+    gap-4
+    mb-10 ;
+}
+
+.presentation p {
+
+  @apply text-4xl
+    max-w-lg
+    text-center
+    font-bold
+    text-zinc-400
+    md:max-w-[95%]
+    md:text-4xl
+    sm:text-2xl ;
+}
+
+.presentation img {
+
+  @apply w-8 ;
+}
+
+.presentation h1 {
+
+  @apply text-4xl
+    flex
+    items-center
+    text-center
+    gap-1
+    font-bold
+    text-quaternary ;
+}
+
+.login-branding figure img {
+
+  @apply aspect-square
+    h-[28rem] ;
+}
+
+@keyframes fly {
+
+  from {
+    right: -50rem;
+  }
+
+  to {
+    right: 100%;
+  }
 }

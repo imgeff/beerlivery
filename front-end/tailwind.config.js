@@ -6,14 +6,32 @@ module.exports = {
     './src/**/*.{js,jsx,ts,tsx}',
   ],
   theme: {
+    screens: {
+      '2xl': { max: '1535px' },
+      // => @media (max-width: 1535px) { ... }
+
+      xl: { max: '1279px' },
+      // => @media (max-width: 1279px) { ... }
+
+      lg: { max: '1023px' },
+      // => @media (max-width: 1023px) { ... }
+
+      md: { max: '767px' },
+      // => @media (max-width: 767px) { ... }
+
+      sm: { max: '639px' },
+      // => @media (max-width: 639px) { ... }
+    },
     extend: {
       colors: {
         primary: '#111015',
         secondary: '#212129',
-        tertiary: '#f83e55',
-        quaternary: '#17b352',
-        quintenary: '#18171c',
-        sextenary: '#c32334',
+        tertiary: '#f3de88',
+        quaternary: '#c49a6c',
+        quintenary: '#a29264',
+        sextenary: '#51472e',
+        septenary: '#c32334',
+        octonary: '#f83e55',
       },
     },
   },

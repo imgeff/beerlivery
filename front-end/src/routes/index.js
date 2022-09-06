@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import LoginPage from '../pages/Login';
-import RegisterPage from '../pages/RegisterPage';
 import CustomerProductsPage from '../pages/CustomerProductsPage';
 import CustomerCheckoutPage from '../pages/CustomerCheckoutPage';
 import CustomerOrdersPage from '../pages/CustomerOrdersPage';
@@ -17,7 +16,7 @@ function Routes() {
     <div>
       <Route exact path="/" component={ Home } />
       <Route exact path="/login" component={ LoginPage } />
-      <Route exact path="/register" component={ RegisterPage } />
+      <Route exact path="/register" component={ LoginPage } />
       <Route exact path="/customer/products" component={ CustomerProductsPage } />
       <Route exact path="/customer/checkout" component={ CustomerCheckoutPage } />
       <Route exact path="/customer/orders" component={ CustomerOrdersPage } />
