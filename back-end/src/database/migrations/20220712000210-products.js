@@ -8,6 +8,15 @@ module.exports = {
         primaryKey: true,
         autoIncrement: true,
       },
+      brandingId: {
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE',
+        references: {
+          model: 'brandings',
+          key: 'id'
+        }
+      },
       name: {
         type: Sequelize.STRING, 
         allowNull: false,
