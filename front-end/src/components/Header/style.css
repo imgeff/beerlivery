@@ -1,0 +1,88 @@
+/* stylelint-disable property-no-vendor-prefix */
+.header {
+
+  @apply h-full
+    top-0
+    fixed
+    z-10
+    w-64
+    bg-secondary
+    border-0
+    border-r-2
+    border-solid
+    border-primary
+    flex
+    flex-col
+    gap-20
+    justify-start
+    items-center ;
+}
+
+.header .greeting {
+
+  @apply h-28
+    flex
+    items-center
+    /* bg-primary */
+    text-center
+    text-4xl
+    text-quaternary
+    font-semibold ;
+}
+
+.header .greeting img {
+
+  @apply aspect-square
+    w-10 ;
+}
+
+.header nav {
+
+  @apply h-full
+    flex
+    w-full
+    flex-col
+    gap-2
+    items-center
+    justify-center ;
+}
+
+.header nav button, .header a {
+
+  @apply h-14
+    flex
+    flex-col
+    items-center
+    justify-center
+    no-underline
+    font-semibold
+    text-base
+    border-y-0
+    border-l-0
+    cursor-pointer
+    border-r-2
+    border-secondary
+    w-full ;
+}
+
+.header nav button {
+
+  @apply text-quaternary
+    bg-secondary
+    border-quaternary
+    border-solid
+    border-y-2
+    border-r-0
+    hover:bg-quaternary
+    hover:text-primary
+    transition-colors ;
+}
+
+.header a {
+
+  @apply py-5
+    bg-septenary
+    text-primary
+    hover:opacity-90
+    transition-colors ;
+}
