@@ -16,10 +16,10 @@ module.exports = {
         name: 'Heineken',
       },
       {
-        name: 'Stella Artois',
+        name: 'Skol',
       },
       {
-        name: 'Skol',
+        name: 'Stella Artois',
       },
     ], {});
   },

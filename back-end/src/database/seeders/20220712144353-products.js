@@ -11,7 +11,7 @@ module.exports = {
        },
       {
         branding_id: 1,
-        name: 'Antarctica 600ml',
+        name: 'Antarctica Subzero 600ml',
         price: 6.19,
         url_image: 'http://localhost:3001/images/products/antarctica_600ml.png',
       },
@@ -35,7 +35,7 @@ module.exports = {
       },
       {
         branding_id: 3,
-        name: 'Brahma 600ml',
+        name: 'Brahma Chopp 600ml',
         price: 7.50,
         url_image: 'http://localhost:3001/images/products/brahma_600ml.png',
       },
@@ -71,39 +71,39 @@ module.exports = {
       },
       {
         branding_id: 5,
-        name: 'Stella Artois 350ml',
-        price: 4.19,
-        url_image: 'http://localhost:3001/images/products/stella_artois_350ml.png',
-      },
-      {
-        branding_id: 5,
-        name: 'Stella Artois 330ml',
-        price: 5.49,
-        url_image: 'http://localhost:3001/images/products/stella_artois_330ml.png',
-      },
-      {
-        branding_id: 5,
-        name: 'Stella Artois Sem Glúten 330ml',
-        price: 5.79,
-        url_image: 'http://localhost:3001/images/products/stella_artois_sem_gluten_330ml.png',
-      },
-      {
-        branding_id: 6,
         name: 'Skol Beats Senses 313ml',
         price: 4.49,
         url_image: 'http://localhost:3001/images/products/skol_beats_senses_313ml.png',
       },
       {
-        branding_id: 6,
+        branding_id: 5,
         name: 'Skol Beats Senses 269ml',
         price: 3.57,
         url_image: 'http://localhost:3001/images/products/skol_beats_senses_269ml.png',
       },
       {
-        branding_id: 6,
-        name: 'Skol 269ml',
+        branding_id: 5,
+        name: 'Skol Pilsen 269ml',
         price: 2.19,
         url_image: 'http://localhost:3001/images/products/skol_pilsen_269ml.png',
+      },
+      {
+        branding_id: 6,
+        name: 'Stella Artois 350ml',
+        price: 4.19,
+        url_image: 'http://localhost:3001/images/products/stella_artois_350ml.png',
+      },
+      {
+        branding_id: 6,
+        name: 'Stella Artois 330ml',
+        price: 5.49,
+        url_image: 'http://localhost:3001/images/products/stella_artois_330ml.png',
+      },
+      {
+        branding_id: 6,
+        name: 'Stella Artois Sem Glúten 330ml',
+        price: 5.79,
+        url_image: 'http://localhost:3001/images/products/stella_artois_sem_gluten_330ml.png',
       },
     ], {});
   },
