@@ -93,7 +93,7 @@ function LoginPage() {
       <div className="container-form">
         <div className="presentation">
           <h1>
-            <img src={ beerIcon } alt="Icone de uma garrafa de cerveja" />
+            <img src={ beerIcon } alt="Icone de um caneca de cerveja" />
             Devlivery
           </h1>
           <p>Seja Bem Vindo! Faça seu login na plataforma</p>
