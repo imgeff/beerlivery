@@ -1,0 +1,40 @@
+/* stylelint-disable selector-max-specificity */
+
+/* stylelint-disable property-no-vendor-prefix */
+.buttons-filter {
+
+  @apply w-full
+    flex
+    justify-center
+    items-center
+    gap-5 ;
+}
+
+.buttons-filter .button-filter {
+
+  @apply w-40
+    py-3
+    px-5
+    rounded-xl
+    font-semibold
+    bg-transparent
+    border-2
+    border-solid
+    border-quaternary
+    text-quaternary
+    text-base
+    cursor-pointer
+    transition-all ;
+}
+
+.buttons-filter .button-filter:hover {
+  -webkit-box-shadow: 0 0 15px 1px #c49a6c;
+  -moz-box-shadow: 0 0 15px 1px #c49a6c;
+  box-shadow: 0 0 15px 1px #c49a6c;
+}
+
+#root .active-filter-quaternary {
+
+  @apply bg-quaternary
+    text-primary ;
+}
