@@ -1,21 +1,27 @@
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { Link, useHistory } from 'react-router-dom';
 import { removeItemLocalStorage } from '../../helpers/localStorage';
 import beerIcon from '../../images/icons/beer-icon.png';
-import './style.css';
 import setActiveElement from '../../helpers/dom/setActiveElement';
+import logoutIcon from '../../images/icons/log-out.svg';
+import './style.css';
+
+const classActiveQuaternary = 'active-header-quaternary';
 
 function Header({ buttonOne, buttonTwo, role, testId, routeOne, routeTwo }) {
   const history = useHistory();
+
+  const { pathname } = history.location;
+
   const redirectToOrders = () => {
     history.push(routeTwo);
-    setActiveElement('active-quaternary', '#button-two', true);
+    setActiveElement(classActiveQuaternary, '#button-two', true);
   };
 
   const redirectToProducts = () => {
     history.push(routeOne);
-    setActiveElement('active-quaternary', '#button-one', true);
+    setActiveElement(classActiveQuaternary, '#button-one', true);
   };
 
   return (
@@ -31,7 +37,7 @@ function Header({ buttonOne, buttonTwo, role, testId, routeOne, routeTwo }) {
         <button
           id="button-one"
           className={
-            history.location.pathname.includes('products') ? 'active-quaternary' : null
+            pathname.includes('products') ? classActiveQuaternary : null
           }
           type="button"
           data-testid="customer_products__element-navbar-link-products"
@@ -44,7 +50,7 @@ function Header({ buttonOne, buttonTwo, role, testId, routeOne, routeTwo }) {
           role === 'customer' && (
             <button
               className={
-                history.location.pathname.includes('orders') ? 'active-quaternary' : null
+                pathname.includes('orders') ? classActiveQuaternary : null
               }
               type="button"
               data-testid="customer_products__element-navbar-link-orders"
@@ -60,6 +66,7 @@ function Header({ buttonOne, buttonTwo, role, testId, routeOne, routeTwo }) {
         data-testid="customer_products__element-navbar-link-logout"
         onClick={ () => removeItemLocalStorage('user') }
       >
+        <img src={ logoutIcon } alt="Ícone de Logout" />
         Sair
       </Link>
     </header>

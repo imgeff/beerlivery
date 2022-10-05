@@ -1,3 +1,5 @@
+/* stylelint-disable selector-max-specificity */
+
 /* stylelint-disable property-no-vendor-prefix */
 .header {
 
@@ -23,14 +25,13 @@
   @apply h-28
     flex
     items-center
-    /* bg-primary */
     text-center
     text-4xl
     text-quaternary
     font-semibold ;
 }
 
-.header .greeting img {
+.header > .greeting > img {
 
   @apply aspect-square
     w-10 ;
@@ -51,9 +52,9 @@
 
   @apply h-14
     flex
-    flex-col
     items-center
     justify-center
+    gap-3
     no-underline
     font-semibold
     text-base
@@ -64,6 +65,7 @@
     border-secondary
     w-full ;
 }
+
 
 .header nav button {
 
@@ -85,4 +87,10 @@
     text-primary
     hover:opacity-90
     transition-colors ;
+}
+
+#root .active-header-quaternary {
+
+  @apply bg-quaternary
+    text-primary ;
 }
