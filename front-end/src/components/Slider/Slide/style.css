@@ -1,0 +1,20 @@
+.slide {
+  transition: 0.6s;
+
+  @apply min-w-[100vw]
+    max-h-[30.2rem]
+    flex
+    flex-wrap
+    items-center
+    justify-end
+    border-x-0
+    border-y-4
+    border-solid
+    border-secondary
+    bg-quaternary ;
+}
+
+.slide figure img {
+
+  @apply aspect-square w-[30rem] ;
+}
