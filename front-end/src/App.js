@@ -6,11 +6,9 @@ import Routes from './routes';
 
 function App() {
   return (
-    <div className="App">
-      <Switch>
-        <Routes />
-      </Switch>
-    </div>
+    <Switch>
+      <Routes />
+    </Switch>
   );
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import LoginPage from '../pages/Login';
-import CustomerProductsPage from '../pages/CustomerProductsPage';
+import CustomerProductsPage from '../pages/CustomerProducts';
 import CustomerCheckoutPage from '../pages/CustomerCheckoutPage';
 import CustomerOrdersPage from '../pages/CustomerOrdersPage';
 import CustomerDetailsPage from '../pages/CustomerDetailsPage';
@@ -13,7 +13,7 @@ import Home from '../pages/Home';
 
 function Routes() {
   return (
-    <div>
+    <>
       <Route exact path="/" component={ Home } />
       <Route exact path="/login" component={ LoginPage } />
       <Route exact path="/register" component={ LoginPage } />
@@ -29,7 +29,7 @@ function Routes() {
       <Route exact path="/seller/orders/:id" component={ SellerDetailsPage } />
       <Route exact path="/admin/manage" component={ AdminManagePage } />
       {/* <Route exact path="*" component={ NotFound } /> */}
-    </div>
+    </>
   );
 }
 
