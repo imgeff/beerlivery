@@ -16,5 +16,8 @@
 
 .slide figure img {
 
-  @apply aspect-square w-[30rem] ;
+  @apply
+    aspect-square
+    w-[30rem]
+    2xl:-mr-20 ;
 }

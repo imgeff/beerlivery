@@ -1,18 +1,48 @@
 /* stylelint-disable selector-max-specificity */
 
 /* stylelint-disable property-no-vendor-prefix */
-.buttons-filter {
+.buttons-wrapper {
 
-  @apply w-full
+  @apply w-[80%]
+    ml-[300px]
     flex
-    justify-center
     items-center
-    gap-5 ;
+    overflow-x-auto
+    snap-x
+    snap-mandatory
+    scroll-smooth ;
 }
 
-.buttons-filter .button-filter {
+.buttons-wrapper > div {
+
+  @apply flex-none pr-10 pointer-events-none ;
+}
+
+.buttons-wrapper .buttons-filter {
+  -webkit-overflow-scrolling: touch;
+
+  @apply flex
+    items-center
+    gap-5
+    py-3
+    px-5
+    overflow-x-auto
+    snap-x
+    snap-mandatory
+    scroll-smooth ;
+}
+
+.buttons-wrapper::-webkit-scrollbar {
+
+  @apply bg-transparent ;
+}
+
+.buttons-wrapper .buttons-filter .button-filter {
+  pointer-events: all;
 
   @apply w-40
+    flex-none
+    snap-start
     py-3
     px-5
     rounded-xl
@@ -27,7 +57,7 @@
     transition-all ;
 }
 
-.buttons-filter .button-filter:hover {
+.buttons-wrapper .buttons-filter .button-filter:hover {
   -webkit-box-shadow: 0 0 15px 1px #c49a6c;
   -moz-box-shadow: 0 0 15px 1px #c49a6c;
   box-shadow: 0 0 15px 1px #c49a6c;

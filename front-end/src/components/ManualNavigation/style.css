@@ -14,7 +14,8 @@
     flex-col
     gap-2
     justify-center
-    items-center ;
+    items-center
+    2xl:left-[25vw] ;
 }
 
 .manual-btn {

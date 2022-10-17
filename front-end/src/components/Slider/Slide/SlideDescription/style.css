@@ -12,7 +12,9 @@
     border-x-2
     border-solid
     border-primary
-    items-center ;
+    items-center
+    2xl:ml-0
+    2xl:w-80 ;
 }
 
 .slide-info {

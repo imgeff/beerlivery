@@ -14,7 +14,8 @@
     bg-primary
     border-solid
     border-secondary
-    border-y-0 ;
+    border-y-0
+    2xl:w-80 ;
 }
 
 .slide-cart .cart-items {
@@ -95,7 +96,8 @@
   @apply aspect-square
     w-80
     border-none
-    m-0 ;
+    m-0
+    2xl:w-64 ;
 }
 
 .slide-cart .cart-footer {
