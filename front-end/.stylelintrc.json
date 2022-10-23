@@ -85,7 +85,7 @@
     "order/properties-alphabetical-order": true,
     "property-case": "lower",
     "property-no-unknown": true,
-    "property-no-vendor-prefix": true,
+    "property-no-vendor-prefix": null,
     "rule-empty-line-before": [
       "always",
       {
@@ -110,7 +110,7 @@
     "selector-max-empty-lines": 0,
     "selector-max-id": 5,
     "selector-max-pseudo-class": 3,
-    "selector-max-specificity": "0,5,0",
+    "selector-max-specificity": null,
     "selector-max-type": 5,
     "selector-max-universal": 3,
     "selector-no-qualifying-type": true,

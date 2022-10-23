@@ -54,22 +54,14 @@
 } */
 
 /* CSS Customer Products Page */
-.productImage {
+/* .productImage {
   height: 150px;
   width: 150px;
-}
+} */
 
-.customerProductsCard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
 }
-
-.allCustomerProducts {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  align-content: center;
-  justify-content: space-around;
-} 
-/* CSS Customer Products Page */

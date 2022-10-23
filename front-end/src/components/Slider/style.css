@@ -1,0 +1,26 @@
+.slider {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+
+  @apply w-full
+    h-full
+    pt-3
+    mt-[13vh]
+    relative
+    overflow-hidden
+    flex
+    flex-col
+    justify-center
+    items-center
+    gap-10
+    lg:mt-auto
+    sm:gap-24 ;
+}
+
+.slides {
+
+  @apply w-[100vw]
+    relative
+    flex ;
+}

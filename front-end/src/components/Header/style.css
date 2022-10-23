@@ -1,0 +1,128 @@
+.header {
+
+  @apply h-full
+    top-0
+    fixed
+    z-10
+    w-64
+    bg-secondary
+    border-0
+    border-r-2
+    border-solid
+    border-primary
+    flex
+    flex-col
+    gap-20
+    justify-start
+    items-center
+    xl:h-[70px]
+    xl:w-full
+    xl:flex-row
+    xl:justify-between
+    md:gap-2 ;
+}
+
+.header .greeting {
+
+  @apply h-28
+    flex
+    items-center
+    text-center
+    text-4xl
+    text-quaternary
+    font-semibold
+    xl:ml-8 ;
+}
+
+.header .greeting span {
+
+  @apply md:hidden ;
+}
+
+.header > .greeting > img {
+
+  @apply aspect-square
+    w-10 ;
+}
+
+.header nav {
+
+  @apply h-full
+    flex
+    w-full
+    flex-col
+    gap-2
+    items-center
+    justify-center
+    xl:flex-row
+    xl:w-auto
+    xl:gap-10
+    xl:-mr-80
+    lg:mr-0
+    sm:gap-4 ;
+}
+
+.header nav button, .header a {
+
+  @apply h-14
+    flex
+    items-center
+    justify-center
+    gap-3
+    no-underline
+    font-semibold
+    text-base
+    border-y-0
+    border-l-0
+    cursor-pointer
+    border-r-2
+    border-secondary
+    w-full
+    xl:h-full ;
+}
+
+
+.header nav button {
+
+  @apply text-quaternary
+    bg-secondary
+    border-quaternary
+    border-solid
+    border-y-2
+    border-r-0
+    hover:bg-quaternary
+    hover:text-primary
+    transition-colors
+    xl:border-0
+    xl:w-max
+    xl:hover:bg-transparent
+    xl:hover:text-quaternary
+    xl:hover:border-b-2
+    xl:hover:border-solid
+    xl:hover:border-quaternary
+    sm:text-sm ;
+}
+
+.header a {
+
+  @apply py-5
+    bg-septenary
+    text-primary
+    hover:opacity-90
+    transition-colors
+    xl:w-max
+    xl:px-10
+    sm:px-3
+    sm:text-sm ;
+}
+
+#root .active-header-quaternary {
+
+  @apply bg-quaternary
+    text-primary
+    xl:bg-transparent
+    xl:text-quaternary
+    xl:border-b-2
+    xl:border-solid
+    xl:border-quaternary ;
+}

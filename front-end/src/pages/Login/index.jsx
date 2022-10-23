@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-max-depth */
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { getItemLocalStorage, setItemLocalStorage } from '../../helpers/localStorage';
@@ -9,6 +8,7 @@ import loginIcon from '../../images/icons/login.svg';
 import cloudsIlustration from '../../images/ilustrations/clouds.svg';
 import beerIcon from '../../images/icons/beer-icon.png';
 import './style.css';
+import ButtonSelect from '../../components/ButtonSelect';
 
 function LoginPage() {
   const [dataUser, setDataUser] = useState({
@@ -93,23 +93,31 @@ function LoginPage() {
       <div className="container-form">
         <div className="presentation">
           <h1>
-            <img src={ beerIcon } alt="Icone de uma garrafa de cerveja" />
+            <img src={ beerIcon } alt="Icone de um caneca de cerveja" />
             Devlivery
           </h1>
           <p>Seja Bem Vindo! Faça seu login na plataforma</p>
         </div>
         <div className="select-form">
           <div className="select-button">
-            <button type="button" onClick={ () => setIsRegister(false) }>
-              <img src={ loginIcon } alt="ícone de login" />
-              <span>Entrar</span>
-            </button>
+            <ButtonSelect
+              icon={ loginIcon }
+              altIcon="ícone de login"
+              eventClick={ setIsRegister }
+              valueEvent={ false }
+            >
+              Entrar
+            </ButtonSelect>
           </div>
           <div className="select-button">
-            <button type="button" onClick={ () => setIsRegister(true) }>
-              <img src={ registerIcon } alt="ícone de registro" />
-              <span>Registrar</span>
-            </button>
+            <ButtonSelect
+              icon={ registerIcon }
+              altIcon="ícone de registro"
+              eventClick={ setIsRegister }
+              valueEvent
+            >
+              Registrar
+            </ButtonSelect>
           </div>
         </div>
         <form>

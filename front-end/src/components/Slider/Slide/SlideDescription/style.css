@@ -1,0 +1,147 @@
+.slide-description {
+
+  @apply h-full
+    ml-20
+    w-96
+    bg-secondary
+    flex
+    flex-col
+    justify-end
+    border-0
+    border-x-2
+    border-solid
+    border-primary
+    items-center
+    2xl:ml-0
+    2xl:w-[22.5rem]
+    lg:w-96
+    lg:ml-16
+    md:ml-0
+    sm:w-48 ;
+}
+
+.slide-info {
+
+  @apply w-full
+    mb-12
+    flex
+    flex-col
+    items-center
+    justify-center
+    gap-1
+    text-quaternary
+    text-center
+    text-xl
+    sm:text-base ;
+}
+
+.slide-info div {
+
+  @apply w-full
+    flex
+    flex-col
+    border-y-2
+    border-x-0
+    border-solid
+    border-primary
+    py-3 ;
+}
+
+.slide-info div span {
+
+  @apply border-y-0
+    font-semibold
+    text-3xl
+    text-white
+    xl:text-2xl
+    sm:text-sm ;
+}
+
+#slide-info-price {
+  -webkit-text-stroke: 0.5px rgb(106, 0, 0);
+
+  @apply text-septenary ;
+}
+
+.slide-operations {
+
+  @apply w-full
+    flex
+    justify-center
+    items-center ;
+}
+
+.slide-operations input {
+
+  @apply w-full
+    py-2
+    bg-transparent
+    border-0
+    border-t-2
+    border-x-2
+    border-solid
+    border-primary
+    text-center
+    text-quaternary
+    text-4xl
+    font-semibold
+    outline-none
+    sm:text-lg ;
+}
+
+.slide-operations button {
+
+  @apply w-full
+    py-2
+    text-center
+    text-4xl
+    font-bold
+    bg-septenary
+    border-0
+    border-t-2
+    border-solid
+    border-primary
+    cursor-pointer
+    last:bg-green-500
+    hover:opacity-80
+    disabled:cursor-not-allowed
+    sm:text-lg ;
+}
+
+.slide-navigators {
+
+  @apply w-full
+    flex
+    justify-center
+    items-center ;
+}
+
+.slide-navigators button {
+
+  @apply w-full
+    px-5
+    py-3
+    flex
+    items-center
+    justify-center
+    font-semibold
+    bg-secondary
+    border-2
+    border-b-0
+    border-x-0
+    border-solid
+    border-primary
+    first:border-r-2
+    text-quaternary
+    cursor-pointer
+    hover:bg-primary
+    text-base
+    transition-all
+    sm:text-sm
+    sm:px-4 ;
+}
+
+.slide-navigators button span {
+
+  @apply sm:hidden ;
+}

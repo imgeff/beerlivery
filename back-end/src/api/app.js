@@ -8,6 +8,7 @@ const registerRoutes = require('../routes/registerRoutes');
 const productsRoutes = require('../routes/productsRoutes');
 const salesRoutes = require('../routes/salesRoutes');
 const usersRoutes = require('../routes/usersRoutes');
+const brandingsRoutes = require('../routes/brandingsRoutes');
 
 const app = express();
 
@@ -22,5 +23,6 @@ app.use('/', salesRoutes);
 app.use('/', saleRoutes);
 app.use('/', saleProductRoutes);
 app.use('/', usersRoutes);
+app.use('/', brandingsRoutes);
 
 module.exports = app;
