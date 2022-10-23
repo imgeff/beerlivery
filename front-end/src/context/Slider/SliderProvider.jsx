@@ -12,7 +12,7 @@ function SliderProvider({ children }) {
   const scrollToSlide = (elementIndex) => {
     const HUNDRED = 100;
     const firstElement = document.querySelector('.first');
-    const marginLeft = `${(elementIndex) * -HUNDRED}%`;
+    const marginLeft = `${(elementIndex) * -HUNDRED -1.3 }%`;
     firstElement.style.marginLeft = marginLeft;
     const elementSelector = `#radio-${elementIndex}`;
     setActiveElement('radio-active', elementSelector, true);

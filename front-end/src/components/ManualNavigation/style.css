@@ -15,7 +15,9 @@
     gap-2
     justify-center
     items-center
-    2xl:left-[25vw] ;
+    2xl:left-[25vw]
+    xl:left-10
+    sm:left-5 ;
 }
 
 .manual-btn {

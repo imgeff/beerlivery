@@ -6,6 +6,7 @@ import ButtonsFilter from '../ButtonsFilter';
 import setActiveElement from '../../helpers/dom/setActiveElement';
 import SliderContext from '../../context/Slider/SliderContext';
 import './style.css';
+import CartMobile from './CartMobile';
 
 function Slider() {
   const [customerCart, setCustomerCart] = useState([]);
@@ -82,9 +83,7 @@ function Slider() {
     <div className="slider">
       <ButtonsFilter filter={ filter } />
       <div className="slides">
-        <ManualNavigation
-          products={ productsByBrand }
-        />
+        <ManualNavigation products={ productsByBrand } />
         {productsByBrand.map((product, index) => (
           <Slide
             key={ product.id }
@@ -94,6 +93,7 @@ function Slider() {
           />
         ))}
       </div>
+      <CartMobile cart={ { totalPrice, amountItems } } />
     </div>
   );
 }

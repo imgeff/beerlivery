@@ -84,7 +84,7 @@ function SlideDescription({ productInfo: { id, name, price, quantity, setQuantit
           } }
         >
           <img src={ prevIcon } alt="Ícone de anterior" />
-          Anterior
+          <span>Anterior</span>
         </button>
         <button
           title="Próximo"
@@ -94,7 +94,7 @@ function SlideDescription({ productInfo: { id, name, price, quantity, setQuantit
               slideActive + 1));
           } }
         >
-          Próximo
+          <span>Próximo</span>
           <img src={ nextIcon } alt="Ícone de próximo" />
         </button>
       </div>

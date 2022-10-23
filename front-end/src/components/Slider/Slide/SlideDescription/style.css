@@ -14,7 +14,11 @@
     border-primary
     items-center
     2xl:ml-0
-    2xl:w-80 ;
+    2xl:w-[22.5rem]
+    lg:w-96
+    lg:ml-16
+    md:ml-0
+    sm:w-48 ;
 }
 
 .slide-info {
@@ -28,7 +32,8 @@
     gap-1
     text-quaternary
     text-center
-    text-xl ;
+    text-xl
+    sm:text-base ;
 }
 
 .slide-info div {
@@ -48,7 +53,9 @@
   @apply border-y-0
     font-semibold
     text-3xl
-    text-white ;
+    text-white
+    xl:text-2xl
+    sm:text-sm ;
 }
 
 #slide-info-price {
@@ -79,7 +86,8 @@
     text-quaternary
     text-4xl
     font-semibold
-    outline-none ;
+    outline-none
+    sm:text-lg ;
 }
 
 .slide-operations button {
@@ -97,7 +105,8 @@
     cursor-pointer
     last:bg-green-500
     hover:opacity-80
-    disabled:cursor-not-allowed ;
+    disabled:cursor-not-allowed
+    sm:text-lg ;
 }
 
 .slide-navigators {
@@ -128,5 +137,12 @@
     cursor-pointer
     hover:bg-primary
     text-base
-    transition-all ;
+    transition-all
+    sm:text-sm
+    sm:px-4 ;
+}
+
+.slide-navigators button span {
+
+  @apply sm:hidden ;
 }

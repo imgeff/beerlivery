@@ -15,7 +15,8 @@
     border-solid
     border-secondary
     border-y-0
-    2xl:w-80 ;
+    2xl:w-80
+    lg:hidden ;
 }
 
 .slide-cart .cart-items {
@@ -131,10 +132,12 @@
 
 #quantity-cart, #price-cart {
 
-  @apply text-quaternary ;
+  @apply text-quaternary
+    lg:text-primary ;
 }
 
 #quantity-cart span, #price-cart span {
 
-  @apply text-white ;
+  @apply text-white
+    lg:text-opacity-80 ;
 }

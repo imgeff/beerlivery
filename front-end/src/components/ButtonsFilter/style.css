@@ -10,7 +10,9 @@
     overflow-x-auto
     snap-x
     snap-mandatory
-    scroll-smooth ;
+    scroll-smooth
+    xl:w-full
+    xl:ml-0 ;
 }
 
 .buttons-wrapper > div {
@@ -54,7 +56,10 @@
     text-quaternary
     text-base
     cursor-pointer
-    transition-all ;
+    transition-all
+    sm:px-0
+    sm:w-28
+    sm:text-sm ;
 }
 
 .buttons-wrapper .buttons-filter .button-filter:hover {

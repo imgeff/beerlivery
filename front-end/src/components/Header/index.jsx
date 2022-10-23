@@ -31,7 +31,7 @@ function Header({ buttonOne, buttonTwo, role, testId, routeOne, routeTwo }) {
         data-testid="customer_products__element-navbar-user-full-name"
       >
         <img src={ beerIcon } alt="Ícone de uma caneca de cerveja" />
-        Devlivery
+        <span>Devlivery</span>
       </span>
       <nav>
         <button
