@@ -5,10 +5,10 @@ const getAll = async (_req, res) => {
     const allBrandings = await brandingsService.getAll();
     return res.status(200).json(allBrandings);
   } catch (error) {
-    return res.status(500).json(err);
+    return res.status(500).json(error);
   }
-}
+};
 
 module.exports = {
   getAll,
-}
+};

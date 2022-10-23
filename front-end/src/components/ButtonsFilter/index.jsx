@@ -2,14 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './style.css';
 
+const ONEHUNDREDSIXTY = 160;
+
 function ButtonsFilter({ filter: { brandings, filterByBrand } }) {
   const mouseScrollFilters = (event) => {
     if (event.deltaY > 0) {
-      event.target.scrollBy(160, 0)
+      event.target.scrollBy(ONEHUNDREDSIXTY, 0);
     } else {
-      event.target.scrollBy(-160, 0)
+      event.target.scrollBy(-ONEHUNDREDSIXTY, 0);
     }
-  }
+  };
 
   return (
     <div className="buttons-wrapper" onWheel={ mouseScrollFilters }>

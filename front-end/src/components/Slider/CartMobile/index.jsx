@@ -14,31 +14,29 @@ function CartMobile({ cart: { totalPrice, amountItems } }) {
   };
 
   return (
-    <>
-        <button
-          className='cart-mobile'
-          data-testid="customer_products__button-cart"
-          type="button"
-          onClick={ redirectToCheckout }
-          disabled={ totalPrice <= 0 }
-        >
-          <img src={ cartIcon } alt="Ícone de um carrinho de compras" />
-          <span id="price-cart">
-            Preço Total:
-            <span data-testid="customer_products__checkout-bottom-value">
-              {' '}
-              R$
-              {' '}
-              { totalPrice.toFixed(2).replace('.', ',') }
-            </span>
-          </span>
-          <span id="quantity-cart">
-            Quantidade:
-            {' '}
-            <span>{amountItems}</span>
-          </span>
-        </button>
-    </>
+    <button
+      className="cart-mobile"
+      data-testid="customer_products__button-cart"
+      type="button"
+      onClick={ redirectToCheckout }
+      disabled={ totalPrice <= 0 }
+    >
+      <img src={ cartIcon } alt="Ícone de um carrinho de compras" />
+      <span id="price-cart">
+        Preço Total:
+        <span data-testid="customer_products__checkout-bottom-value">
+          {' '}
+          R$
+          {' '}
+          { totalPrice.toFixed(2).replace('.', ',') }
+        </span>
+      </span>
+      <span id="quantity-cart">
+        Quantidade:
+        {' '}
+        <span>{amountItems}</span>
+      </span>
+    </button>
   );
 }
 
