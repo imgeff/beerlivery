@@ -1,6 +1,3 @@
-/* stylelint-disable selector-max-specificity */
-
-/* stylelint-disable property-no-vendor-prefix */
 .buttons-wrapper {
 
   @apply w-[80%]
