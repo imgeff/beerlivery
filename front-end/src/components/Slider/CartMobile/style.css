@@ -1,0 +1,27 @@
+.cart-mobile {
+
+  @apply hidden
+    relative
+    items-center
+    justify-center
+    gap-8
+    bg-septenary
+    py-3
+    w-full
+    cursor-pointer
+    text-lg
+    text-primary
+    font-semibold
+    hover:opacity-90
+    transition-all
+    disabled:cursor-not-allowed
+    lg:flex
+    sm:gap-4
+    sm:text-base ;
+}
+
+.cart-mobile img {
+
+  @apply aspect-square
+    w-10 ;
+}
