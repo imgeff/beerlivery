@@ -1,0 +1,9 @@
+.customer-checkout {
+
+  @apply text-quaternary ;
+}
+
+.customer-checkout-main {
+
+  @apply ml-[25vw] ;
+}
