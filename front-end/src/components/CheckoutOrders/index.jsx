@@ -1,5 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import TrashIcon from '../../images/icons/trash.svg';
+import CartIcon from '../../images/icons/cart-gold.svg';
+import './style.css';
 
 function CheckoutOrders({ products, setProducts, totalPrice }) {
   const deleteProduct = (index) => {
@@ -9,8 +12,11 @@ function CheckoutOrders({ products, setProducts, totalPrice }) {
   };
 
   return (
-    <div>
-      <h1>Finalizar Pedido</h1>
+    <div className="checkout-orders">
+      <h1>
+        Carrinho
+        <img src={ CartIcon } alt="Ícone de carrinho de compras" />
+      </h1>
       <table>
         <thead>
           <tr>
@@ -34,7 +40,11 @@ function CheckoutOrders({ products, setProducts, totalPrice }) {
                     `customer_checkout__element-order-table-item-number-${index}`
                   }
                 >
-                  { index + 1 }
+                  <img
+                    id="table-product-picture"
+                    src={ product.urlImage }
+                    alt="Imagem do Item"
+                  />
                 </td>
                 <td
                   data-testid={
@@ -55,6 +65,8 @@ function CheckoutOrders({ products, setProducts, totalPrice }) {
                     `customer_checkout__element-order-table-unit-price-${index}`
                   }
                 >
+                  R$
+                  {' '}
                   { product.price.replace('.', ',') }
                 </td>
                 <td
@@ -62,25 +74,36 @@ function CheckoutOrders({ products, setProducts, totalPrice }) {
                     `customer_checkout__element-order-table-sub-total-${index}`
                   }
                 >
+                  R$
+                  {' '}
                   { product.subTotal.toFixed(2).replace('.', ',') }
                 </td>
-                <button
-                  type="button"
-                  data-testid={ `customer_checkout__element-order-table-remove-${index}` }
-                  onClick={ () => deleteProduct(index) }
-                >
-                  Remover Item
-                </button>
+                <td>
+                  <button
+                    type="button"
+                    data-testid={
+                      `customer_checkout__element-order-table-remove-${index}`
+                    }
+                    onClick={ () => deleteProduct(index) }
+                  >
+                    <img
+                      id="table-trash-icon"
+                      src={ TrashIcon }
+                      alt="Ícone de uma lixeira"
+                    />
+                  </button>
+                </td>
               </tr>
             ))
           }
         </tbody>
-        <p>Total: R$</p>
-        <p
-          data-testid="customer_checkout__element-order-total-price"
-        >
-          {totalPrice.toFixed(2).replace('.', ',')}
-        </p>
+        <tfoot>
+          <tr>
+            <td>
+              {`Total: R$ ${totalPrice.toFixed(2).replace('.', ',')}`}
+            </td>
+          </tr>
+        </tfoot>
       </table>
     </div>
   );

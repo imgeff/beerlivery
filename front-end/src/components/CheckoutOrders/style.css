@@ -1,0 +1,93 @@
+.checkout-orders {
+
+  @apply flex
+    flex-col
+    gap-5
+    w-4/5 ;
+}
+
+.checkout-orders h1 {
+
+  @apply flex
+    items-center
+    justify-center
+    gap-3 ;
+}
+
+.checkout-orders h1 img {
+
+  @apply aspect-square
+    w-10 ;
+}
+
+.checkout-orders table {
+
+  @apply bg-[#040818]
+    border-2
+    border-solid
+    border-secondary
+    rounded-md ;
+}
+
+.checkout-orders table :where( thead, tbody ) {
+
+  @apply text-center ;
+}
+
+.checkout-orders table thead {
+
+  @apply font-semibold ;
+}
+
+.checkout-orders tfoot tr td {
+
+  @apply py-5
+    text-center
+    font-semibold ;
+}
+
+.checkout-orders table thead td {
+
+  @apply py-2
+    first:rounded-tl-md
+    last:rounded-tr-md
+    bg-secondary
+    text-white ;
+}
+
+.checkout-orders table tbody td {
+
+  @apply font-medium ;
+}
+
+.checkout-orders table :where( thead, tbody ) :is( tr ) {
+
+  @apply bg-secondary
+    text-quaternary ;
+}
+
+.checkout-orders table :where( thead, tbody ) td {
+
+  @apply py-2
+    first:w-[150px]
+    last:w-32 ;
+}
+
+#table-product-picture {
+
+  @apply w-28 ;
+}
+
+#table-trash-icon {
+
+  @apply aspect-square
+    w-10
+    cursor-pointer
+    hover:w-9
+    transition-all ;
+}
+
+.checkout-orders table td button {
+
+  @apply bg-transparent ;
+}

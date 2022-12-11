@@ -1,9 +1,14 @@
 .customer-checkout {
 
-  @apply text-quaternary ;
+  @apply text-quaternary
+    py-20 ;
 }
 
 .customer-checkout-main {
 
-  @apply ml-[25vw] ;
+  @apply ml-[15vw]
+    flex
+    flex-col
+    justify-center
+    items-center ;
 }
