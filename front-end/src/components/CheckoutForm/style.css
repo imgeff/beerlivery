@@ -1,0 +1,90 @@
+.checkout-form {
+
+  @apply w-4/5
+    mb-32
+    flex
+    flex-col
+    items-center
+    gap-10
+    xl:w-11/12
+    sm:mb-20 ;
+}
+
+.checkout-form h1 {
+
+  @apply md:text-2xl
+    sm:text-xl ;
+}
+
+.checkout-form form {
+
+  @apply flex
+    justify-start
+    items-end
+    gap-10
+    lg:gap-2
+    md:text-sm
+    sm:flex-col
+    sm:items-center ;
+}
+
+.checkout-form form label {
+
+  @apply flex
+    flex-col
+    justify-center
+    items-start
+    gap-3
+    text-white
+    sm:w-full
+    sm:gap-1 ;
+}
+
+.checkout-form form select {
+
+  @apply daisy-select
+    daisy-select-bordered
+    w-full
+    text-quaternary
+    bg-secondary ;
+}
+
+.checkout-form form input {
+
+  @apply daisy-input
+    daisy-input-bordered
+    w-full
+    text-quaternary
+    font-semibold
+    bg-secondary ;
+}
+
+.checkout-form form label:nth-child( 2 ) input {
+
+  @apply w-96
+    lg:w-72
+    md:w-56
+    sm:w-full ;
+}
+
+.checkout-form form label:nth-child( 3 ) input {
+
+  @apply md:w-16
+    sm:w-full ;
+}
+
+.checkout-form form button {
+
+  @apply daisy-btn
+    w-max
+    text-primary
+    bg-quaternary
+    capitalize
+    border-2
+    border-solid
+    hover:border-secondary
+    hover:text-quaternary
+    transition-all
+    sm:w-full
+    sm:mt-5 ;
+}
