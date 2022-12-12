@@ -2,13 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TrashIcon from '../../images/icons/trash.svg';
 import CartIcon from '../../images/icons/cart-gold.svg';
+import { setItemLocalStorage } from '../../helpers/localStorage';
 import './style.css';
 
 function CheckoutOrders({ products, setProducts, totalPrice }) {
   const deleteProduct = (index) => {
-    const cloneArray = [...products];
-    cloneArray.splice(index, 1);
-    setProducts(cloneArray);
+    const cloneProducts = [...products];
+    cloneProducts.splice(index, 1);
+    setProducts(cloneProducts);
+    setItemLocalStorage('carrinho', cloneProducts);
   };
 
   return (
@@ -112,7 +114,7 @@ function CheckoutOrders({ products, setProducts, totalPrice }) {
 CheckoutOrders.propTypes = {
   products: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
-    price: PropTypes.number.isRequired,
+    price: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     quantity: PropTypes.number.isRequired,
   })).isRequired,

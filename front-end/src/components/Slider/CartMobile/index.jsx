@@ -5,7 +5,7 @@ import { setItemLocalStorage } from '../../../helpers/localStorage';
 import cartIcon from '../../../images/icons/cart.svg';
 import './style.css';
 
-function CartMobile({ cart: { totalPrice, amountItems } }) {
+function CartMobile({ cart: { totalPrice, amountItems, customerCart } }) {
   const history = useHistory();
 
   const redirectToCheckout = () => {
@@ -44,6 +44,12 @@ CartMobile.propTypes = {
   cart: PropTypes.shape({
     totalPrice: PropTypes.number.isRequired,
     amountItems: PropTypes.number.isRequired,
+    customerCart: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.number,
+      urlImage: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      price: PropTypes.string.isRequired,
+    })).isRequired,
   }).isRequired,
 };
 

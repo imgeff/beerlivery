@@ -62,7 +62,6 @@ function SlideCart({ cart: { customerCart, totalPrice, amountItems } }) {
 
 SlideCart.propTypes = {
   cart: PropTypes.shape({
-    setCustomerCart: PropTypes.func.isRequired,
     customerCart: PropTypes.arrayOf(PropTypes.shape({
       id: PropTypes.number,
       urlImage: PropTypes.string.isRequired,

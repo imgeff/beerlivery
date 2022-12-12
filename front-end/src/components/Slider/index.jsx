@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { getAll } from '../../helpers/api/requests';
+import { getItemLocalStorage, setItemLocalStorage } from '../../helpers/localStorage';
 import Slide from './Slide';
 import ManualNavigation from '../ManualNavigation';
 import ButtonsFilter from '../ButtonsFilter';
 import setActiveElement from '../../helpers/dom/setActiveElement';
 import SliderContext from '../../context/Slider/SliderContext';
-import './style.css';
 import CartMobile from './CartMobile';
+import './style.css';
 
 function Slider() {
   const [customerCart, setCustomerCart] = useState([]);
@@ -42,6 +43,17 @@ function Slider() {
     setBrandings(response);
   };
 
+  const retrieveLastCart = () => {
+    const lastCart = getItemLocalStorage('carrinho');
+    if (lastCart) {
+      setCustomerCart(lastCart);
+    }
+  };
+
+  const updateStorageCart = () => {
+    setItemLocalStorage('carrinho', customerCart);
+  };
+
   const calculateTotalCard = () => {
     const totalPriceCalculation = customerCart
       .reduce((acc, itemCart) => acc + parseFloat(itemCart.subTotal), 0);
@@ -64,10 +76,12 @@ function Slider() {
     getAllProducts();
     getAllBrandings();
     setActiveElement('active-filter-quaternary', '#filter-branding-0', true);
+    retrieveLastCart();
   }, []);
 
   useEffect(() => {
     calculateTotalCard();
+    updateStorageCart();
   }, [customerCart]);
 
   useEffect(() => {
@@ -93,7 +107,7 @@ function Slider() {
           />
         ))}
       </div>
-      <CartMobile cart={ { totalPrice, amountItems } } />
+      <CartMobile cart={ { totalPrice, amountItems, customerCart } } />
     </div>
   );
 }
