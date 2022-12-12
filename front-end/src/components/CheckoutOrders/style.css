@@ -3,7 +3,9 @@
   @apply flex
     flex-col
     gap-5
-    w-4/5 ;
+    w-4/5
+    lg:w-11/12
+    sm:w-full ;
 }
 
 .checkout-orders h1 {
@@ -11,13 +13,16 @@
   @apply flex
     items-center
     justify-center
-    gap-3 ;
+    gap-3
+    md:text-2xl
+    sm:text-xl ;
 }
 
 .checkout-orders h1 img {
 
   @apply aspect-square
-    w-10 ;
+    w-10
+    sm:w-8 ;
 }
 
 .checkout-orders table {
@@ -26,7 +31,9 @@
     border-2
     border-solid
     border-secondary
-    rounded-md ;
+    rounded-md
+    md:text-sm
+    sm:text-[11px] ;
 }
 
 .checkout-orders table :where( thead, tbody ) {
@@ -52,12 +59,14 @@
     first:rounded-tl-md
     last:rounded-tr-md
     bg-secondary
-    text-white ;
+    text-white
+    lg:px-2 ;
 }
 
 .checkout-orders table tbody td {
 
-  @apply font-medium ;
+  @apply font-medium
+    px-2 ;
 }
 
 .checkout-orders table :where( thead, tbody ) :is( tr ) {
@@ -70,12 +79,17 @@
 
   @apply py-2
     first:w-[150px]
-    last:w-32 ;
+    last:w-32
+    md:first:w-[100px]
+    md:last:w-24
+    sm:last:w-16 ;
 }
 
 #table-product-picture {
 
-  @apply w-28 ;
+  @apply w-28
+    md:w-16
+    sm:w-10 ;
 }
 
 #table-trash-icon {
@@ -84,7 +98,9 @@
     w-10
     cursor-pointer
     hover:w-9
-    transition-all ;
+    transition-all
+    md:w-7
+    md:hover:w-6 ;
 }
 
 .checkout-orders table td button {

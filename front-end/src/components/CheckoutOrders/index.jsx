@@ -101,7 +101,7 @@ function CheckoutOrders({ products, setProducts, totalPrice }) {
         </tbody>
         <tfoot>
           <tr>
-            <td>
+            <td colSpan={ 6 }>
               {`Total: R$ ${totalPrice.toFixed(2).replace('.', ',')}`}
             </td>
           </tr>
