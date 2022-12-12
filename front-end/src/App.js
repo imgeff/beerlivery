@@ -1,14 +1,16 @@
 import React from 'react';
-import './App.css';
 import { Switch } from 'react-router-dom';
 import Routes from './routes';
-// import rockGlass from './images/rockGlass.svg';
+import GlobalProvider from './context/Global/GlobalProvider';
+import './App.css';
 
 function App() {
   return (
-    <Switch>
-      <Routes />
-    </Switch>
+    <GlobalProvider>
+      <Switch>
+        <Routes />
+      </Switch>
+    </GlobalProvider>
   );
 }
 

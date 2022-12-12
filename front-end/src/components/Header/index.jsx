@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Link, useHistory } from 'react-router-dom';
 import { removeItemLocalStorage } from '../../helpers/localStorage';
@@ -6,10 +6,13 @@ import beerIcon from '../../images/icons/beer-icon.png';
 import setActiveElement from '../../helpers/dom/setActiveElement';
 import logoutIcon from '../../images/icons/log-out.svg';
 import './style.css';
+import GlobalContext from '../../context/Global/GlobalContext';
 
 const classActiveQuaternary = 'active-header-quaternary';
 
-function Header({ buttonOne, buttonTwo, role, testId, routeOne, routeTwo }) {
+function Header({ buttonOne, buttonTwo, testId, routeOne, routeTwo }) {
+  const { userData: { user } } = useContext(GlobalContext);
+
   const history = useHistory();
 
   const { pathname } = history.location;
@@ -47,7 +50,7 @@ function Header({ buttonOne, buttonTwo, role, testId, routeOne, routeTwo }) {
         </button>
 
         {
-          role === 'customer' && (
+          user.role === 'customer' && (
             <button
               className={
                 pathname.includes('orders') ? classActiveQuaternary : null
@@ -80,7 +83,6 @@ Header.defaultProps = {
 Header.propTypes = {
   buttonOne: PropTypes.string.isRequired,
   buttonTwo: PropTypes.string,
-  role: PropTypes.string.isRequired,
   testId: PropTypes.string.isRequired,
   routeOne: PropTypes.string.isRequired,
   routeTwo: PropTypes.string.isRequired,
