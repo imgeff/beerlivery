@@ -106,7 +106,7 @@ function LoginPage() {
               eventClick={ setIsRegister }
               valueEvent={ false }
             >
-              Entrar
+              Login
             </ButtonSelect>
           </div>
           <div className="select-button">
@@ -116,7 +116,7 @@ function LoginPage() {
               eventClick={ setIsRegister }
               valueEvent
             >
-              Registrar
+              Registro
             </ButtonSelect>
           </div>
         </div>

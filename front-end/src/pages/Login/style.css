@@ -135,7 +135,7 @@
   backdrop-filter: blur(4px);
   background: rgba(0, 0, 0, 0.6);
 
-  @apply w-[24vw]
+  @apply w-[28vw]
     p-10
     border-2
     border-quintenary
@@ -146,7 +146,8 @@
     justify-center
     rounded-xl
     2xl:w-[50%]
-    xl:w-[70%] ;
+    xl:w-[70%]
+    sm:w-[90%] ;
 }
 
 .login form label {
@@ -170,11 +171,12 @@
     w-full
     px-10
     border-0
+    border-solid
     border-b-2
-    border-quaternary
-    text-white
+    border-zinc-800
+    text-zinc-500
     font-semibold
-    placeholder:text-zinc-600
+    placeholder:text-zinc-700
     placeholder:font-semibold ;
 }
 
@@ -195,7 +197,8 @@
     cursor-pointer
     border-2
     border-quaternary
-    hover:opacity-100 ;
+    hover:opacity-100
+    disabled:opacity-40 ;
 }
 
 .login .btn-secondary {
@@ -225,7 +228,7 @@
 
 .presentation p {
 
-  @apply text-4xl
+  @apply text-3xl
     max-w-lg
     text-center
     font-bold
@@ -237,12 +240,12 @@
 
 .presentation img {
 
-  @apply w-8 ;
+  @apply w-12 ;
 }
 
 .presentation h1 {
 
-  @apply text-4xl
+  @apply text-5xl
     flex
     items-center
     text-center
