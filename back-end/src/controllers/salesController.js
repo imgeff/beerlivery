@@ -20,7 +20,7 @@ const createSale = async (req, res, _next) => {
 
 const getSalesBySeller = async (req, res) => {
   try {
-    const { id } = req.body;
+    const { id } = req.params;
     const sales = await salesService.getSalesBySeller(id);
     return res.status(200).json(sales);
   } catch (error) {
