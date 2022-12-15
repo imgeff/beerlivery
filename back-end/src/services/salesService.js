@@ -1,4 +1,4 @@
-const { sale, user, salesProduct } = require('../database/models');
+const { sale, user, order } = require('../database/models');
 
 const createSale = async ({ 
   userId, sellerId, totalPrice, deliveryAddress, deliveryNumber, saleDate, status, products }) => {
@@ -6,7 +6,7 @@ const createSale = async ({
     .create({ userId, sellerId, totalPrice, deliveryAddress, deliveryNumber, saleDate, status });
   
   const allProductsInSale = products 
-    .map((product) => (salesProduct.create({ ...product, saleId: newSale.id })));
+    .map((product) => (order.create({ ...product, saleId: newSale.id })));
   Promise.all(allProductsInSale);
   
   return newSale.id;

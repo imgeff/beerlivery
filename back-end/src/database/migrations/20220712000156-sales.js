@@ -38,10 +38,6 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      sale_date: {
-        type: Sequelize.DATE,
-        allowNull: false,
-      },
       status: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -56,6 +52,6 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.dropTable('users');
+    await queryInterface.dropTable('sales');
   }
 };

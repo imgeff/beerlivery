@@ -5,8 +5,8 @@ const authorizationToken = require('../middlewares/auth/authorizationToken');
 const router = Router();
 
 router.post('/sales', authorizationToken, salesController.createSale);
-router.get('/seller/orders/:id', salesController.getSalesBySeller);
+router.get('/sales/seller/:id', salesController.getSalesBySeller);
 router.patch('/sales/:id', salesController.updateStatusSale);
-router.get('/customer/orders/:id', salesController.getSalesByUser);
+router.get('/sales/customer/:id', salesController.getSalesByUser);
 
 module.exports = router;
