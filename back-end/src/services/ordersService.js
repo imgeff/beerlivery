@@ -1,8 +1,8 @@
-const { salesProduct, sale, product, user } = require('../database/models');
+const { order, sale, product, user } = require('../database/models');
 
 // eslint-disable-next-line max-lines-per-function
-const getBySaleId = async (saleId) => {
-  const saleProductById = await salesProduct.findAll({
+const getOrdersBySaleId = async (saleId) => {
+  const orderBySaleId = await order.findAll({
     include: [
       {
         model: product,
@@ -25,7 +25,7 @@ const getBySaleId = async (saleId) => {
       exclude: ['saleId', 'productId'],
     },
   });
-  return saleProductById;
+  return orderBySaleId;
 };
 
-module.exports = { getBySaleId };
+module.exports = { getOrdersBySaleId };

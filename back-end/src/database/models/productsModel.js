@@ -13,7 +13,7 @@ const productsModel = (sequelize, DataTypes) => {
     Products.belongsTo(models.branding, {
       foreignKey: 'brandingId'
     });
-    Products.hasMany(models.salesProduct, {
+    Products.hasMany(models.order, {
       foreignKey: 'productId'
     })
   }

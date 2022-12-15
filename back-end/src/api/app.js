@@ -3,7 +3,7 @@ const cors = require('cors');
 
 const loginRoutes = require('../routes/loginRoutes');
 const saleRoutes = require('../routes/salesRoutes');
-const saleProductRoutes = require('../routes/salesProductsRoutes');
+const ordersRoutes = require('../routes/ordersRoutes');
 const registerRoutes = require('../routes/registerRoutes');
 const productsRoutes = require('../routes/productsRoutes');
 const salesRoutes = require('../routes/salesRoutes');
@@ -21,7 +21,7 @@ app.use('/', registerRoutes);
 app.use('/', productsRoutes);
 app.use('/', salesRoutes);
 app.use('/', saleRoutes);
-app.use('/', saleProductRoutes);
+app.use('/', ordersRoutes);
 app.use('/', usersRoutes);
 app.use('/', brandingsRoutes);
 

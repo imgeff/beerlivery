@@ -20,7 +20,7 @@ const salesModel = (sequelize, DataTypes) => {
       foreignKey: 'sellerId',
       as: 'seller'
     });
-    Sale.hasMany(models.salesProduct, {
+    Sale.hasMany(models.order, {
       foreignKey: "saleId"
     })
   };
