@@ -1,17 +1,29 @@
-const { salesProduct, sale, product } = require('../database/models');
+const { salesProduct, sale, product, user } = require('../database/models');
 
-const getBySaleId = async (id) => {
-  const saleProductById = await salesProduct.findOne({ where: { saleId: id } }, {
+// eslint-disable-next-line max-lines-per-function
+const getBySaleId = async (saleId) => {
+  const saleProductById = await salesProduct.findAll({
     include: [
-      { 
-        model: sale,
-        as: 'sales',
-      },
       {
         model: product,
-        as: 'products',
+        as: 'product',
+        attributes: {
+          exclude: ['id'],
+        },
+      },
+      { 
+        model: sale,
+        as: 'sale',
+        attributes: {
+          exclude: ['userId', 'sellerId'],
+        },
+        include: { model: user, as: 'seller', attributes: ['name'] },
       },
     ],
+    where: { saleId },
+    attributes: {
+      exclude: ['saleId', 'productId'],
+    },
   });
   return saleProductById;
 };
