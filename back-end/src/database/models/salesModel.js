@@ -5,11 +5,10 @@ const salesModel = (sequelize, DataTypes) => {
     totalPrice: DataTypes.DECIMAL,
     deliveryAddress: DataTypes.STRING,
     deliveryNumber: DataTypes.STRING,
-    saleDate: DataTypes.DATE,
     status: DataTypes.STRING,
   }, { 
     underscored: true, 
-    createdAt: 'sale_date', 
+    createdAt: 'saleDate', 
     updatedAt: false 
   });
 
@@ -19,7 +18,11 @@ const salesModel = (sequelize, DataTypes) => {
     });
     Sale.belongsTo(models.user, {
       foreignKey: 'sellerId',
+      as: 'seller'
     });
+    Sale.hasMany(models.salesProduct, {
+      foreignKey: "saleId"
+    })
   };
 
   return Sale;
