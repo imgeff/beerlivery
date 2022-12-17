@@ -10,8 +10,16 @@ const defaultUser = {
   token: '',
 };
 
+const indicatorColors = {
+  Pendente: '#c49a6c',
+  Preparando: '#87D53C',
+  Entregue: '#2FC18C',
+};
+
 function GlobalProvider({ children }) {
   const [user, setUser] = useState(defaultUser);
+
+  const [messageError, setMessageError] = useState('');
 
   const catchDataUser = () => {
     const data = getItemLocalStorage('user');
@@ -27,7 +35,14 @@ function GlobalProvider({ children }) {
       user,
       setUser,
     },
-  }), [user]);
+    api: {
+      setMessageError,
+      messageError,
+    },
+    style: {
+      indicatorColors,
+    },
+  }), [user, messageError]);
 
   return (
     <GlobalContext.Provider value={ contextValue }>
