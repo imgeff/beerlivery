@@ -1,0 +1,17 @@
+.details-container {
+
+  @apply h-screen
+    ml-64
+    flex
+    flex-col
+    justify-center
+    items-center
+    gap-10
+    text-quaternary
+    xl:ml-0 ;
+}
+
+.details-container h1 {
+
+  @apply xl:mt-20 ;
+}

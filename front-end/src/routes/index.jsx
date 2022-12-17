@@ -4,7 +4,7 @@ import LoginPage from '../pages/Login';
 import CustomerProductsPage from '../pages/CustomerProducts';
 import CustomerCheckoutPage from '../pages/CustomerCheckout';
 import CustomerOrdersPage from '../pages/CustomerOrdersPage';
-import CustomerDetailsPage from '../pages/CustomerDetailsPage';
+import CustomerDetailsPage from '../pages/CustomerDetails';
 import SellerOrdersPage from '../pages/SellerOrdersPage';
 import SellerDetailsPage from '../pages/SellerDetailsPage';
 import AdminManagePage from '../pages/AdminManagePage';
