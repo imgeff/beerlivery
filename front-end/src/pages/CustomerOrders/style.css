@@ -1,0 +1,79 @@
+.orders {
+
+  @apply h-full
+    py-20
+    flex
+    flex-wrap
+    gap-10
+    justify-center
+    items-center
+    ml-[15vw]
+    xl:ml-0
+    xl:pt-40 ;
+}
+
+.order-container {
+
+  @apply relative
+    w-96
+    h-40
+    p-0.5
+    flex
+    justify-evenly
+    items-center
+    bg-primary
+    border-2
+    border-solid
+    border-secondary
+    rounded-lg
+    text-white
+    transition-all
+    cursor-pointer ;
+}
+
+.order-container > div {
+
+  @apply h-full
+    w-full
+    flex
+    flex-col
+    justify-center
+    items-center
+    first:rounded-tl-md
+    first:rounded-bl-md
+    last:gap-5
+    font-semibold
+    text-base
+    first:text-xl
+    bg-secondary ;
+}
+
+.order-container > p {
+
+  @apply h-full
+    w-max
+    px-5
+    flex
+    justify-center
+    items-center
+    bg-secondary
+    font-bold
+    text-lg
+    border-0
+    border-x-2
+    border-solid
+    border-primary
+    text-primary
+    uppercase ;
+}
+
+.order-container > div:last-child > p {
+
+  @apply last:text-septenary ;
+}
+
+.order-container > div:first-child > p {
+
+  @apply last:text-2xl
+    last:text-septenary ;
+}
