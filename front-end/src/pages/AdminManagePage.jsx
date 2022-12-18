@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Header from '../components/Header';
 import { fetchPost } from '../helpers/api/requests';
 import validateDataUser from '../helpers/validate/validateDataUser';
 import { getItemLocalStorage } from '../helpers/localStorage';
+import GlobalContext from '../context/Global/GlobalContext';
 
 function AdminManagePage() {
   const [newUser, setNewUser] = useState({
@@ -12,7 +13,7 @@ function AdminManagePage() {
     role: 'seller',
   });
   const [buttonDisabled, setButtonDisabled] = useState(true);
-  const [messageError, setMessageError] = useState('');
+  const { api: { messageError, setMessageError } } = useContext(GlobalContext);
   const [dataUser, setDataUser] = useState({
     name: '', email: '', role: '', token: '',
   });

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { getItemLocalStorage, setItemLocalStorage } from '../../helpers/localStorage';
 import { fetchPost } from '../../helpers/api/requests';
@@ -9,6 +9,7 @@ import cloudsIlustration from '../../images/ilustrations/clouds.svg';
 import beerIcon from '../../images/icons/beer-icon.png';
 import './style.css';
 import ButtonSelect from '../../components/ButtonSelect';
+import GlobalContext from '../../context/Global/GlobalContext';
 
 function LoginPage() {
   const [dataUser, setDataUser] = useState({
@@ -17,7 +18,7 @@ function LoginPage() {
     password: '',
   });
   const [buttonDisabled, setButtonDisabled] = useState(true);
-  const [messageError, setMessageError] = useState('');
+  const { api: { messageError, setMessageError } } = useContext(GlobalContext);
   const [isRegister, setIsRegister] = useState(false);
 
   const history = useHistory();
