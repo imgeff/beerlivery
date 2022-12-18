@@ -34,7 +34,8 @@ function CheckoutForm({ totalPrice, products }) {
     ));
 
     setItemLocalStorage('carrinho', products);
-    const response = await fetchPost({
+
+    const newSale = {
       userId: user.id,
       sellerId: deliveryInfo.sellerId,
       totalPrice,
@@ -42,8 +43,11 @@ function CheckoutForm({ totalPrice, products }) {
       deliveryNumber: deliveryInfo.number,
       status: 'Pendente',
       products: arrayProducts,
-    }, 'sales', user.token);
-    history.push(`orders/${response}`);
+    };
+
+    const response = await fetchPost(newSale, 'sales', user.token);
+
+    if (response.message === undefined) history.push('orders');
   };
 
   const handleDeliveryData = ({ target }) => {

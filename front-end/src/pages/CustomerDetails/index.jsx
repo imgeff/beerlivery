@@ -16,7 +16,7 @@ function CustomerDetailsPage() {
     id: '',
   });
 
-  const [order, setOrder] = useState();
+  const [order, setOrder] = useState([]);
 
   const { api: { messageError, setMessageError } } = useContext(GlobalContext);
 
@@ -54,7 +54,7 @@ function CustomerDetailsPage() {
       <div className="details-container">
         <h1>Detalhe do Pedido</h1>
         {messageError && <h2>{messageError}</h2>}
-        {order && <OrderDetails order={ order } />}
+        {order.length > 0 && <OrderDetails order={ order } />}
       </div>
     </div>
   );
