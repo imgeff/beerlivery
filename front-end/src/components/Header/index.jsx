@@ -34,7 +34,7 @@ function Header({ buttonOne, buttonTwo, testId, routeOne, routeTwo }) {
         data-testid="customer_products__element-navbar-user-full-name"
       >
         <img src={ beerIcon } alt="Ícone de uma caneca de cerveja" />
-        <span>Devlivery</span>
+        <span>Beerlivery</span>
       </span>
       <nav>
         <button
@@ -50,7 +50,7 @@ function Header({ buttonOne, buttonTwo, testId, routeOne, routeTwo }) {
         </button>
 
         {
-          user.role === 'customer' && (
+          user?.role === 'customer' && (
             <button
               className={
                 pathname.includes('orders') ? classActiveQuaternary : null

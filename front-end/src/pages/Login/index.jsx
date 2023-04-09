@@ -95,7 +95,7 @@ function LoginPage() {
         <div className="presentation">
           <h1>
             <img src={ beerIcon } alt="Icone de um caneca de cerveja" />
-            Devlivery
+            Beerlivery
           </h1>
           <p>Seja Bem Vindo! Faça seu login na plataforma</p>
         </div>
