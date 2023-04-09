@@ -7,7 +7,7 @@ import GlobalContext from '../../context/Global/GlobalContext';
 import './style.css';
 
 function CheckoutForm({ totalPrice, products }) {
-  const { userData: { user } } = useContext(GlobalContext);
+  const { userData } = useContext(GlobalContext);
 
   const history = useHistory();
 
@@ -36,7 +36,7 @@ function CheckoutForm({ totalPrice, products }) {
     setItemLocalStorage('carrinho', products);
 
     const newSale = {
-      userId: user.id,
+      userId: userData.user.id,
       sellerId: deliveryInfo.sellerId,
       totalPrice,
       deliveryAddress: deliveryInfo.address,
@@ -45,7 +45,7 @@ function CheckoutForm({ totalPrice, products }) {
       products: arrayProducts,
     };
 
-    const response = await fetchPost(newSale, 'sales', user.token);
+    const response = await fetchPost(newSale, 'sales', userData.user.token);
 
     if (response.message === undefined) history.push('orders');
   };
