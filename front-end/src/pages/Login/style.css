@@ -163,7 +163,6 @@
   background: none;
   letter-spacing: 1px;
   outline: none;
-  text-shadow: 1px 1px 2px black;
 
   @apply my-3
     mx-auto
@@ -175,9 +174,16 @@
     border-b-2
     border-zinc-800
     text-zinc-500
-    font-semibold
     placeholder:text-zinc-700
     placeholder:font-semibold ;
+}
+
+/* Cor de fundo do autocomplete */
+.login form label input:-webkit-autofill {
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 0 30px #A1A1AA inset;
 }
 
 .login form .btn-primary {
