@@ -1,5 +1,7 @@
+const apiUrl = process.env.REACT_APP_API_URL;
+
 const updateOrderStatus = (status, saleId) => {
-  const requestResult = fetch(`http://localhost:3001/sales/${saleId}`, {
+  const requestResult = fetch(`${apiUrl}/sales/${saleId}`, {
     method: 'PATCH',
     body: JSON.stringify({ status }),
     headers: {
