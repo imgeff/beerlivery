@@ -1,5 +1,7 @@
+const apiUrl = process.env.REACT_APP_API_URL;
+
 const fetchPost = (body, route, token) => {
-  const fetchRoute = fetch(`http://localhost:3001/${route}`, {
+  const fetchRoute = fetch(`${apiUrl}/${route}`, {
     method: 'POST',
     body: JSON.stringify(body),
     headers: {
@@ -15,7 +17,7 @@ const fetchPost = (body, route, token) => {
 };
 
 const getAll = (route) => {
-  const fetchRoute = fetch(`http://localhost:3001/${route}`)
+  const fetchRoute = fetch(`${apiUrl}/${route}`)
     .then((response) => response.json())
     .then((data) => data)
     .catch((error) => console.log(error));
